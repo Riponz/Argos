@@ -34,3 +34,15 @@
  - automatically add to expenses
 - Savings Tracker
  - AI for savings and expense analyser
+
+## Category Entity
+- Title
+- Id
+
+## Expense Entity
+- Amount
+- Time
+- Date
+- CategoryId
+- PaymentMethod
+- UserId
