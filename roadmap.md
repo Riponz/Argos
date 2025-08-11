@@ -2,22 +2,22 @@
 
 ### Core Features
 - Expense Entry
- - manually enter a transaction
+  - manually enter a transaction
 - View All Entry
 - Filter Payments
- - filter by:
-  - month
-  - time range
-  - category
-  - Payment Method
+  - filter by:
+    - month
+    - time range
+    - category
+    - Payment Method
 
 ### Investment Features
 - Investment Entry
- - Manually enter the details of the stock or sip
+  - Manually enter the details of the stock or sip
 
 - View All Investments
 - Investment Insights
- - Show total investment
+  - Show total investment
 
 ### Dashboard & Insight
 - Pie Chart
@@ -31,9 +31,9 @@
 
 ### Miscellaneous
 - Recurring Expenses
- - automatically add to expenses
+  - automatically add to expenses
 - Savings Tracker
- - AI for savings and expense analyser
+  - AI for savings and expense analyser
 
 ## Category Entity
 - Title
