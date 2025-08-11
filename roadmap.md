@@ -1,6 +1,6 @@
-##Argos: No-nonsense finance
+## Argos: No-nonsense finance
 
-###Core Features
+### Core Features
 - Expense Entry
  - manually enter a transaction
 - View All Entry
@@ -11,7 +11,7 @@
   - category
   - Payment Method
 
-###Investment Features
+### Investment Features
 - Investment Entry
  - Manually enter the details of the stock or sip
 
@@ -19,17 +19,17 @@
 - Investment Insights
  - Show total investment
 
-###Dashboard & Insight
+### Dashboard & Insight
 - Pie Chart
 - Category Breakup
 - Frequent Time
 - Investment Summary
 
-###Notification and Alerts
+### Notification and Alerts
 - Sip reminder
 - Investement reminder
 
-###Miscellaneous
+### Miscellaneous
 - Recurring Expenses
  - automatically add to expenses
 - Savings Tracker
