@@ -3,18 +3,14 @@ package com.argos.tracker.personal_finance.controllers;
 
 import com.argos.tracker.personal_finance.entities.Category;
 import com.argos.tracker.personal_finance.entities.Expense;
-import com.argos.tracker.personal_finance.repositories.CategoryRepo;
+import com.argos.tracker.personal_finance.entities.Filter;
 import com.argos.tracker.personal_finance.services.CategoryService;
 import com.argos.tracker.personal_finance.services.ExpenseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/expense")
@@ -27,15 +23,15 @@ public class ExpenseController {
     private CategoryService categoryService;
 
     @GetMapping("/all")
-    public ResponseEntity<?> allExpenses(){
+    public ResponseEntity<?> allExpenses() {
         List<Expense> expenses = expenseService.getAll();
         return new ResponseEntity<>(expenses, HttpStatus.OK);
     }
 
     @PostMapping("/add")
-    public ResponseEntity<?> add_expense(@RequestBody Expense expense){
+    public ResponseEntity<?> add_expense(@RequestBody Expense expense) {
 
-        if(expense.getCategoryId() != null){
+        if (expense.getCategoryId() != null) {
 
             Category category = categoryService.findById(expense.getCategoryId())
                     .orElseThrow(() -> new RuntimeException("Category not found"));
@@ -50,19 +46,37 @@ public class ExpenseController {
 
     //FILTER METHODS
     @PostMapping("/by-month")
-    public void expensesByMonth(@RequestBody String month){}
+    public ResponseEntity<?> expensesByMonth(@RequestBody Filter date) {
+        List<Expense> monthlyExpenses = expenseService.findByMonth(date.getYearMonth());
+        return new ResponseEntity<>(monthlyExpenses, HttpStatus.OK);
+    }
+
 
     @PostMapping("/by-category")
-    public void expensesByCategory(@RequestBody String category){}
+    public ResponseEntity<?> expensesByCategory(@RequestBody Filter filter) {
 
-    @PostMapping("/by-week")
-    public void expensesByWeek(@RequestBody LocalDateTime start, @RequestBody LocalDateTime end){}
+        List<Expense> categoryExpenses = expenseService.byCategory(filter.getCategoryId());
 
-    @PostMapping("/by-time")
-    public void expensesByTime(@RequestBody LocalDateTime start, @RequestBody LocalDateTime end){}
+        return new ResponseEntity<>(categoryExpenses, HttpStatus.OK);
+    }
+
+    @PostMapping("/by-range")
+    public ResponseEntity<?> expensesByWeek(@RequestBody Filter filter) {
+        List<Expense> rangeExpenses = expenseService.byRange(filter.getStart(), filter.getEnd());
+        return new ResponseEntity<>(rangeExpenses, HttpStatus.OK);
+    }
 
     @PostMapping("/by-payment-method")
-    public void expensesByPaymentMethod(@RequestBody String method){}
+    public ResponseEntity<?> expensesByPaymentMethod(@RequestBody Filter filter) {
+        List<Expense> methodExpnses = expenseService.byMethod(filter.getMethod());
+        return new ResponseEntity<>(methodExpnses, HttpStatus.OK);
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<?> deleteExpense(@PathVariable String id) {
+        expenseService.deleteExpense(id);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
 
 
 }
