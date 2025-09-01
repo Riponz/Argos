@@ -9,10 +9,10 @@
 - Investment Methods
 
 ## Key Priorities
-- [ ] Add investments SIP
-- [ ] View all investments
+- [x] Add investments
+- [x] View all investments
 - [ ] Investment insights (total invested, category%)
-- [ ] Recurring feature
+- [ ] Recurring/SIP feature
 - [ ] Email reminder
 
 ---
