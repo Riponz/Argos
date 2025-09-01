@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class CategoryService {
@@ -21,5 +22,11 @@ public class CategoryService {
     public List<Category> categories(){
         List<Category> categories = categoryRepo.findAll();
         return categories;
+    }
+
+    public Optional<Category> findById(int id){
+        Optional<Category> category = categoryRepo.findById(id);
+
+        return category;
     }
 }

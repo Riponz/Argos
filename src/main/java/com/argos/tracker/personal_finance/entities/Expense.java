@@ -22,6 +22,7 @@ public class Expense {
     @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
     private LocalDateTime date;
     private String paymentMethod;
-//    @DBRef
-//    private Category categoryId;
+    private Integer categoryId;
+    @DBRef
+    private Category category;
 }

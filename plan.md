@@ -8,6 +8,6 @@
 ## Key Priorities
 - [ ] Filter payments
 - [x] Expense entry
-- [ ] View all entry
+- [x] View all entry
 
 ---
