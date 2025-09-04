@@ -3,7 +3,6 @@ package com.argos.tracker.personal_finance.controllers;
 
 import com.argos.tracker.personal_finance.entities.Investment;
 import com.argos.tracker.personal_finance.services.InvestmentService;
-import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

@@ -1,5 +1,6 @@
 # Project Plan
 
+#### closed on 04-09-2025
 
 ## Current Sprint (01-09-2025 to 07-09-2025)
 
@@ -11,9 +12,9 @@
 ## Key Priorities
 - [x] Add investments
 - [x] View all investments
-- [ ] Investment insights (total invested, category%)
-- [ ] Recurring/SIP feature
-- [ ] Email reminder
+- [ ] ~~Investment insights (total invested, category%)~~ From Front-end
+- [ ] Recurring/SIP feature [PREMIUM]
+- [ ] Email reminder [PREMIUM]
 
 ---
 
